@@ -467,8 +467,8 @@ p { margin: 0 0 1em; max-width: 68ch; }
   transition-delay: calc(var(--i, 0) * 90ms);
 }
 .js .reveal.in { opacity: 1; transform: none; filter: none; }
-.js .reveal-img { clip-path: inset(0 0 100% 0 round var(--radius-l)); transition: clip-path 1.1s var(--ease-out); }
-.js .reveal-img.in { clip-path: inset(0 0 0 0 round var(--radius-l)); }
+.js .reveal-img > img { clip-path: inset(0 0 100% 0 round var(--radius-l)); transition: clip-path 1.1s var(--ease-out), transform 1.2s var(--ease-out); }
+.js .reveal-img.in > img { clip-path: inset(0 0 0 0 round var(--radius-l)); }
 
 /* ---------- Hero entrance sequence ---------- */
 .js .hero h1 .seq, .js .hero .lead, .js .hero-actions, .js .settings, .js .intake-card {
@@ -609,7 +609,7 @@ p { margin: 0 0 1em; max-width: 68ch; }
 
 /* ---------- Reduced motion: show everything, move nothing ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal, .js .reveal-img, .js .hero h1 .seq, .js .hero .lead, .js .hero-actions,
+  .js .reveal, .js .reveal-img > img, .js .hero h1 .seq, .js .hero .lead, .js .hero-actions,
   .js .settings, .js .intake-card, .js .tags li, .js .pathway .num {
     opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important;
   }

@@ -98,7 +98,7 @@ const singles = [
   '.split > div:not(.split-media):not(.graft-figure)', '.cta-band', '.definition',
   '.page-hero .wrap', '.form', '.graft-figure'
 ];
-const images = ['.split-media img', '.place img', '.photo-banner figure'];
+const images = ['.split-media img', '.place img', '.photo-banner figure img'];
 
 const toObserve = [];
 groups.forEach(sel => document.querySelectorAll(sel).forEach(group => {
@@ -111,7 +111,12 @@ groups.forEach(sel => document.querySelectorAll(sel).forEach(group => {
 singles.forEach(sel => document.querySelectorAll(sel).forEach(el => {
   if (!el.classList.contains('reveal')) { el.classList.add('reveal'); toObserve.push(el); }
 }));
-images.forEach(sel => document.querySelectorAll(sel).forEach(el => { el.classList.add('reveal-img'); toObserve.push(el); }));
+// Observe the photo's container (a fully clipped element never counts as visible)
+images.forEach(sel => document.querySelectorAll(sel).forEach(el => {
+  const box = el.parentElement;
+  box.classList.add('reveal-img');
+  if (!toObserve.includes(box)) toObserve.push(box);
+}));
 document.querySelectorAll('.pathway, .tags').forEach(el => toObserve.push(el));
 
 if ('IntersectionObserver' in window && !reduceMotion) {
