@@ -617,3 +617,18 @@ p { margin: 0 0 1em; max-width: 68ch; }
   .js .value .bar { width: 40px; }
   .pulse::after, .graft-figure img, .cta-band::before, .hero-media img { animation: none !important; }
 }
+
+/* ---------- Wide photo banner (home) ---------- */
+.photo-banner { padding: var(--section) 0 0; }
+.photo-banner figure { margin: 0; position: relative; border-radius: var(--radius-l); overflow: hidden; }
+.photo-banner img { width: 100%; aspect-ratio: 12 / 5; object-fit: cover; transition: transform 1.4s var(--ease-out); }
+.photo-banner figure:hover img { transform: scale(1.03); }
+.photo-banner figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: clamp(20px, 4vw, 44px);
+  background: linear-gradient(to top, rgba(15,46,51,.78), transparent);
+  color: var(--white); font-size: clamp(1.1rem, 2.2vw, 1.6rem); font-weight: 500; letter-spacing: -0.01em;
+}
+@media (max-width: 640px) {
+  .photo-banner img { aspect-ratio: 4 / 3; }
+}

@@ -98,7 +98,7 @@ const singles = [
   '.split > div:not(.split-media):not(.graft-figure)', '.cta-band', '.definition',
   '.page-hero .wrap', '.form', '.graft-figure'
 ];
-const images = ['.split-media img', '.place img'];
+const images = ['.split-media img', '.place img', '.photo-banner figure'];
 
 const toObserve = [];
 groups.forEach(sel => document.querySelectorAll(sel).forEach(group => {
