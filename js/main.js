@@ -37,7 +37,7 @@ if (form) {
     let ok = true;
     form.querySelectorAll('[required]').forEach(input => {
       const field = input.closest('.field');
-      const valid = input.value.trim() !== '' && input.checkValidity();
+      const valid = input.type === 'checkbox' ? input.checked : (input.value.trim() !== '' && input.checkValidity());
       field.classList.toggle('invalid', !valid);
       if (!valid) ok = false;
     });
@@ -69,7 +69,7 @@ if (form) {
   });
 
   form.querySelectorAll('input, select').forEach(el =>
-    el.addEventListener('input', () => el.closest('.field').classList.remove('invalid')));
+    el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', () => el.closest('.field').classList.remove('invalid')));
 }
 
 // ----------------------------------------------------------

@@ -104,8 +104,13 @@
             <label for="message">Message <span class="opt">(optional)</span></label>
             <textarea id="message" name="message" placeholder="Wound type, care setting, preferred times…"></textarea>
           </div>
+          <div class="field field-check">
+            <input id="consent" name="consent" type="checkbox" required>
+            <label for="consent">I agree to be contacted about my enquiry and have read the <a href="policies.html#privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="policies.html#terms" target="_blank" rel="noopener">Terms</a>.</label>
+            <p class="error">Please confirm to send your message.</p>
+          </div>
           <button class="btn btn-book" type="submit">Send message</button>
-          <p class="form-note">Please don’t include detailed medical history here — we’ll go through it with you by phone.</p>
+          <p class="form-note">Please don’t include medical history, wound photos or insurance numbers — we’ll go through them with you securely by phone. For emergencies, call 911.</p>
           <p class="form-status" id="form-status" role="status">Your email app should open with your message ready to send. If it doesn’t, email us at <a href="mailto:hello@wellowoundcare.com">hello@wellowoundcare.com</a> or call <a href="tel:+18337304498">(833) 730-4498</a>.</p>
         </form>
       </div>
@@ -135,7 +140,8 @@
             <li><a href="contact.html?reason=book">Book an appointment</a></li>
             <li><a href="resources.html#prepare">Preparing for a visit</a></li>
             <li><a href="resources.html#insurance">Insurance &amp; billing</a></li>
-            <li><a href="resources.html#privacy">Privacy</a></li>
+            <li><a href="policies.html#privacy">Privacy policy</a></li>
+            <li><a href="policies.html#terms">Terms &amp; conditions</a></li>
           </ul>
         </div>
         <div>
@@ -149,7 +155,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> Wello Wound Care. All rights reserved.</span>
-        <span>If you have a medical emergency, call 911.</span>
+        <span><a href="policies.html#privacy">Privacy</a> &nbsp;|&nbsp; <a href="policies.html#terms">Terms</a> &nbsp;|&nbsp; <a href="policies.html#accessibility">Accessibility</a> &nbsp;|&nbsp; Medical emergency? Call 911.</span>
       </div>
     </div>
   </footer>
